@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6453FD1716D03AF9008B7052 /* KZRankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453FD1516D03AF9008B7052 /* KZRankingViewController.m */; };
+		6453FD1816D03AF9008B7052 /* KZRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453FD1616D03AF9008B7052 /* KZRankingViewController.xib */; };
+		6453FD1A16D0879F008B7052 /* KZBranchOutGameViewController-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453FD1916D0879F008B7052 /* KZBranchOutGameViewController-landscape.xib */; };
+		6453FD1C16D09FFF008B7052 /* KZRankingViewController-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453FD1B16D09FFF008B7052 /* KZRankingViewController-landscape.xib */; };
 		6470AB1516CE2AB3005DFB95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6470AB1416CE2AB3005DFB95 /* UIKit.framework */; };
 		6470AB1716CE2AB3005DFB95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6470AB1616CE2AB3005DFB95 /* Foundation.framework */; };
 		6470AB1916CE2AB3005DFB95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6470AB1816CE2AB3005DFB95 /* CoreGraphics.framework */; };
@@ -24,6 +28,18 @@
 		6470AB3B16CE2AB4005DFB95 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6470AB1A16CE2AB3005DFB95 /* CoreData.framework */; };
 		6470AB4316CE2AB4005DFB95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6470AB4116CE2AB4005DFB95 /* InfoPlist.strings */; };
 		6470AB4616CE2AB4005DFB95 /* BranchOutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6470AB4516CE2AB4005DFB95 /* BranchOutTests.m */; };
+		64B0BB8316CEEAC8006729FA /* KZFBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B0BB8116CEEAC8006729FA /* KZFBLoginViewController.m */; };
+		64B0BB8416CEEAC8006729FA /* KZFBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B0BB8216CEEAC8006729FA /* KZFBLoginViewController.xib */; };
+		64B0BB8816CEED57006729FA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0BB8716CEED57006729FA /* FacebookSDK.framework */; };
+		64B0BB8A16CEED8A006729FA /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64B0BB8916CEED8A006729FA /* FacebookSDKResources.bundle */; };
+		64B0BB8C16CEEDC9006729FA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0BB8B16CEEDC9006729FA /* AdSupport.framework */; };
+		64B0BB8E16CEEDCD006729FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0BB8D16CEEDCD006729FA /* Accounts.framework */; };
+		64B0BB9016CEEDD4006729FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0BB8F16CEEDD4006729FA /* Social.framework */; };
+		64B0BB9816CEF424006729FA /* KZBranchOutGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B0BB9616CEF424006729FA /* KZBranchOutGameViewController.m */; };
+		64B0BB9916CEF424006729FA /* KZBranchOutGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B0BB9716CEF424006729FA /* KZBranchOutGameViewController.xib */; };
+		64B0BBE616CF0C30006729FA /* BranchOutGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B0BBE516CF0C30006729FA /* BranchOutGame.m */; };
+		64B0BBEF16CF27A4006729FA /* BOCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B0BBEE16CF27A4006729FA /* BOCard.m */; };
+		64B0BBF516CF27CC006729FA /* BODeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B0BBF416CF27CC006729FA /* BODeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6453FD1416D03AF9008B7052 /* KZRankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZRankingViewController.h; sourceTree = "<group>"; };
+		6453FD1516D03AF9008B7052 /* KZRankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZRankingViewController.m; sourceTree = "<group>"; };
+		6453FD1616D03AF9008B7052 /* KZRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KZRankingViewController.xib; sourceTree = "<group>"; };
+		6453FD1916D0879F008B7052 /* KZBranchOutGameViewController-landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KZBranchOutGameViewController-landscape.xib"; sourceTree = "<group>"; };
+		6453FD1B16D09FFF008B7052 /* KZRankingViewController-landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KZRankingViewController-landscape.xib"; sourceTree = "<group>"; };
 		6470AB1116CE2AB3005DFB95 /* BranchOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BranchOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6470AB1416CE2AB3005DFB95 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6470AB1616CE2AB3005DFB95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +79,23 @@
 		6470AB4216CE2AB4005DFB95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6470AB4416CE2AB4005DFB95 /* BranchOutTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BranchOutTests.h; sourceTree = "<group>"; };
 		6470AB4516CE2AB4005DFB95 /* BranchOutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BranchOutTests.m; sourceTree = "<group>"; };
+		64B0BB8016CEEAC8006729FA /* KZFBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZFBLoginViewController.h; sourceTree = "<group>"; };
+		64B0BB8116CEEAC8006729FA /* KZFBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZFBLoginViewController.m; sourceTree = "<group>"; };
+		64B0BB8216CEEAC8006729FA /* KZFBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KZFBLoginViewController.xib; sourceTree = "<group>"; };
+		64B0BB8716CEED57006729FA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		64B0BB8916CEED8A006729FA /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		64B0BB8B16CEEDC9006729FA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		64B0BB8D16CEEDCD006729FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		64B0BB8F16CEEDD4006729FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		64B0BB9516CEF424006729FA /* KZBranchOutGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZBranchOutGameViewController.h; sourceTree = "<group>"; };
+		64B0BB9616CEF424006729FA /* KZBranchOutGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZBranchOutGameViewController.m; sourceTree = "<group>"; };
+		64B0BB9716CEF424006729FA /* KZBranchOutGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KZBranchOutGameViewController.xib; sourceTree = "<group>"; };
+		64B0BBE416CF0C30006729FA /* BranchOutGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchOutGame.h; sourceTree = "<group>"; };
+		64B0BBE516CF0C30006729FA /* BranchOutGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchOutGame.m; sourceTree = "<group>"; };
+		64B0BBED16CF27A4006729FA /* BOCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCard.h; sourceTree = "<group>"; };
+		64B0BBEE16CF27A4006729FA /* BOCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOCard.m; sourceTree = "<group>"; };
+		64B0BBF316CF27CB006729FA /* BODeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODeck.h; sourceTree = "<group>"; };
+		64B0BBF416CF27CC006729FA /* BODeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODeck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +107,10 @@
 				6470AB1716CE2AB3005DFB95 /* Foundation.framework in Frameworks */,
 				6470AB1916CE2AB3005DFB95 /* CoreGraphics.framework in Frameworks */,
 				6470AB1B16CE2AB3005DFB95 /* CoreData.framework in Frameworks */,
+				64B0BB8816CEED57006729FA /* FacebookSDK.framework in Frameworks */,
+				64B0BB8C16CEEDC9006729FA /* AdSupport.framework in Frameworks */,
+				64B0BB8E16CEEDCD006729FA /* Accounts.framework in Frameworks */,
+				64B0BB9016CEEDD4006729FA /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +150,11 @@
 		6470AB1316CE2AB3005DFB95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64B0BB8F16CEEDD4006729FA /* Social.framework */,
+				64B0BB8D16CEEDCD006729FA /* Accounts.framework */,
+				64B0BB8B16CEEDC9006729FA /* AdSupport.framework */,
+				64B0BB8916CEED8A006729FA /* FacebookSDKResources.bundle */,
+				64B0BB8716CEED57006729FA /* FacebookSDK.framework */,
 				6470AB1416CE2AB3005DFB95 /* UIKit.framework */,
 				6470AB1616CE2AB3005DFB95 /* Foundation.framework */,
 				6470AB1816CE2AB3005DFB95 /* CoreGraphics.framework */,
@@ -122,7 +169,9 @@
 			children = (
 				6470AB2516CE2AB3005DFB95 /* KZAppDelegate.h */,
 				6470AB2616CE2AB3005DFB95 /* KZAppDelegate.m */,
-				6470AB2E16CE2AB4005DFB95 /* BranchOut.xcdatamodeld */,
+				64B0BBE716CF0C39006729FA /* Model */,
+				64B0BBE916CF0C5C006729FA /* Controller */,
+				64B0BBE816CF0C56006729FA /* View */,
 				6470AB1D16CE2AB3005DFB95 /* Supporting Files */,
 			);
 			path = BranchOut;
@@ -131,6 +180,7 @@
 		6470AB1D16CE2AB3005DFB95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6470AB2E16CE2AB4005DFB95 /* BranchOut.xcdatamodeld */,
 				6470AB1E16CE2AB3005DFB95 /* BranchOut-Info.plist */,
 				6470AB1F16CE2AB3005DFB95 /* InfoPlist.strings */,
 				6470AB2216CE2AB3005DFB95 /* main.m */,
@@ -159,6 +209,44 @@
 				6470AB4116CE2AB4005DFB95 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64B0BBE716CF0C39006729FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64B0BBE416CF0C30006729FA /* BranchOutGame.h */,
+				64B0BBE516CF0C30006729FA /* BranchOutGame.m */,
+				64B0BBED16CF27A4006729FA /* BOCard.h */,
+				64B0BBEE16CF27A4006729FA /* BOCard.m */,
+				64B0BBF316CF27CB006729FA /* BODeck.h */,
+				64B0BBF416CF27CC006729FA /* BODeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		64B0BBE816CF0C56006729FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64B0BB8216CEEAC8006729FA /* KZFBLoginViewController.xib */,
+				64B0BB9716CEF424006729FA /* KZBranchOutGameViewController.xib */,
+				6453FD1916D0879F008B7052 /* KZBranchOutGameViewController-landscape.xib */,
+				6453FD1616D03AF9008B7052 /* KZRankingViewController.xib */,
+				6453FD1B16D09FFF008B7052 /* KZRankingViewController-landscape.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		64B0BBE916CF0C5C006729FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64B0BB8016CEEAC8006729FA /* KZFBLoginViewController.h */,
+				64B0BB8116CEEAC8006729FA /* KZFBLoginViewController.m */,
+				64B0BB9516CEF424006729FA /* KZBranchOutGameViewController.h */,
+				64B0BB9616CEF424006729FA /* KZBranchOutGameViewController.m */,
+				6453FD1416D03AF9008B7052 /* KZRankingViewController.h */,
+				6453FD1516D03AF9008B7052 /* KZRankingViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +325,12 @@
 				6470AB2916CE2AB3005DFB95 /* Default.png in Resources */,
 				6470AB2B16CE2AB3005DFB95 /* Default@2x.png in Resources */,
 				6470AB2D16CE2AB3005DFB95 /* Default-568h@2x.png in Resources */,
+				64B0BB8416CEEAC8006729FA /* KZFBLoginViewController.xib in Resources */,
+				64B0BB8A16CEED8A006729FA /* FacebookSDKResources.bundle in Resources */,
+				64B0BB9916CEF424006729FA /* KZBranchOutGameViewController.xib in Resources */,
+				6453FD1816D03AF9008B7052 /* KZRankingViewController.xib in Resources */,
+				6453FD1A16D0879F008B7052 /* KZBranchOutGameViewController-landscape.xib in Resources */,
+				6453FD1C16D09FFF008B7052 /* KZRankingViewController-landscape.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +368,12 @@
 				6470AB2316CE2AB3005DFB95 /* main.m in Sources */,
 				6470AB2716CE2AB3005DFB95 /* KZAppDelegate.m in Sources */,
 				6470AB3016CE2AB4005DFB95 /* BranchOut.xcdatamodeld in Sources */,
+				64B0BB8316CEEAC8006729FA /* KZFBLoginViewController.m in Sources */,
+				64B0BB9816CEF424006729FA /* KZBranchOutGameViewController.m in Sources */,
+				64B0BBE616CF0C30006729FA /* BranchOutGame.m in Sources */,
+				64B0BBEF16CF27A4006729FA /* BOCard.m in Sources */,
+				64B0BBF516CF27CC006729FA /* BODeck.m in Sources */,
+				6453FD1716D03AF9008B7052 /* KZRankingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +426,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kazuhito Ochiai (S583AV7KGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -339,8 +440,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "CE19BE41-A4B2-46FF-BFF3-8B7C891296D4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,14 +459,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kazuhito Ochiai (S583AV7KGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "CE19BE41-A4B2-46FF-BFF3-8B7C891296D4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -374,9 +478,14 @@
 		6470AB4A16CE2AB4005DFB95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BranchOut/BranchOut-Prefix.pch";
 				INFOPLIST_FILE = "BranchOut/BranchOut-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,9 +494,14 @@
 		6470AB4B16CE2AB4005DFB95 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BranchOut/BranchOut-Prefix.pch";
 				INFOPLIST_FILE = "BranchOut/BranchOut-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,6 +560,7 @@
 				6470AB4B16CE2AB4005DFB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6470AB4C16CE2AB4005DFB95 /* Build configuration list for PBXNativeTarget "BranchOutTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +569,7 @@
 				6470AB4E16CE2AB4005DFB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,8 +7,23 @@
 //
 
 #import "KZAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "KZBranchOutGameViewController.h"
+#import "KZFBLoginViewController.h"
+
+@interface KZAppDelegate()
+@property (strong, nonatomic) KZBranchOutGameViewController *mainViewController;
+@property (retain, nonatomic) UINavigationController *navController;
+
+@end
 
 @implementation KZAppDelegate
+@synthesize window = _window;
+@synthesize mainViewController = _mainViewController;
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize navController = _navController;
 
 - (void)dealloc
 {
@@ -16,22 +31,110 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_navController release];
+    [_mainViewController release];
     [super dealloc];
 }
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+     application.applicationSupportsShakeToEdit = YES;
+    // BUG:
+    // Nib files require the type to have been loaded before they can do the
+    // wireup successfully.
+    // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
+    [FBProfilePictureView class];
+    
+     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    
+    self.mainViewController = [[[KZBranchOutGameViewController alloc]
+                               initWithNibName:@"KZBranchOutGameViewController" bundle:nil] autorelease];
+    
+    self.navController = [[[UINavigationController alloc] initWithRootViewController:self.mainViewController] autorelease];
+    [self.navController setNavigationBarHidden:YES];
+    
+    
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
+    
+    // See if we have a valid token for the current state.
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        [self openSession];
+        
+    } else {
+        // No, display the login page.
+        [self showLoginView];
+    }
     return YES;
 }
 
+#pragma mark - Facebook authorization
+- (void)showLoginView
+{
+    KZFBLoginViewController* loginViewController =[[[KZFBLoginViewController alloc]initWithNibName:@"KZFBLoginViewController" bundle:nil] autorelease];
+    [self.mainViewController presentViewController:loginViewController animated:NO completion:nil];
+}
+
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen: {
+            if ([[self.mainViewController presentedViewController]
+                 isKindOfClass:[KZFBLoginViewController class]]) {
+                [self.mainViewController dismissViewControllerAnimated:YES completion:nil];
+             
+            }
+        }
+            [self.mainViewController viewWillAppear:NO];
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:   
+            
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
+            [self showLoginView];
+            break;
+        default:
+            break;
+    }
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+- (void)openSession
+{
+    [FBSession openActiveSessionWithReadPermissions:nil
+                                       allowLoginUI:YES
+                                  completionHandler:
+     ^(FBSession *session,
+       FBSessionState state, NSError *error) {
+         [self sessionStateChanged:session state:state error:error];
+     }];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [FBSession.activeSession handleOpenURL:url];
+}
+
+
+#pragma mark -
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -51,11 +154,22 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    // FBSample logic
+    // We need to properly handle activation of the application with regards to SSO
+    //  (e.g., returning from iOS 6.0 authorization dialog or from fast app switching).
+    [FBSession.activeSession handleDidBecomeActive];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    // FBSample logic
+    // if the app is going away, we close the session object; this is a good idea because
+    // things may be hanging off the session, that need releasing (completion block, etc.) and
+    // other components in the app may be awaiting close notification in order to do cleanup
+    [FBSession.activeSession close];
+    
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
