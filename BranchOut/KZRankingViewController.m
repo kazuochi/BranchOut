@@ -27,7 +27,7 @@
         if(i==10){
             break;
         }
-        if([self.rankingArray[i] isMemberOfClass:[BOCard class]]){
+        else if([self.rankingArray[i] isMemberOfClass:[BOCard class]]){
             BOCard *card = (BOCard*)self.rankingArray[i];
             ((UILabel *)self.rankingNameLabels[i]).text = card.name;
             
@@ -43,9 +43,10 @@
         }
         
     }
-    // Do any additional setup after loading the view from its nib.
 }
+
 -(IBAction)doneButtonPressed:(UIButton *)sender{
+    
     [self.delegate rankingViewDidFifnish];
 }
 

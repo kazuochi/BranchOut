@@ -31,7 +31,7 @@
 /* creates hand by selecting random candidates from deck */
 -(id)initWithDeck:(BODeck *)deck totalRound:(NSUInteger)round;
 
-/* move to next round if gameFinished = NO */
+/* move to next round */
 -(void)nextRound;
 
 /* change current candidate to new ones 

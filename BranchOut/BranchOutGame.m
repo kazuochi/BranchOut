@@ -11,7 +11,7 @@
 @interface BranchOutGame()
 
 /* random set of candidates. Next candidates are last 2 objects of hand. */
-@property (readonly, nonatomic) NSMutableArray *hand;
+@property (retain, nonatomic) NSMutableArray *hand;
 @property (retain, nonatomic) BODeck *deck;
 @property (nonatomic) NSUInteger cardCount;
 

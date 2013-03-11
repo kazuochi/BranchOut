@@ -119,6 +119,46 @@
     }
 }
 
+-(void)updateUI{
+    
+    if(!self.view.userInteractionEnabled){
+        self.view.userInteractionEnabled = YES;
+    }
+    
+    self.titleLabel.text = @"WHO'S MORE FUN?";
+    self.progressLabel.text = [self createProgressString];  //set progress label
+    self.progressView.progress = (float)self.branchOutGame.currentRound / self.branchOutGame.totalRound; //set progressview's float value
+    
+    for(int i=0; i<[self.branchOutGame.currentCandidates count]; i++){  //update picture and label
+        ((FBProfilePictureView *)self.currentCandidatesImageView[i]).profileID =  ((BOCard *)self.branchOutGame.currentCandidates[i]).id;
+        
+        ((UILabel *)self.currentCandidatesNameLabel[i]).text =  ((BOCard *)self.branchOutGame.currentCandidates[i]).name;
+    }
+    
+    /* orientation support */
+    NSArray *viewControllers = self.navigationController.viewControllers;
+    NSUInteger index = [viewControllers indexOfObject:self];
+    
+    //if actual orientation is landscape but portrait view is on schreen, push landscape view
+    if(  ((self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)) && (index == 0)  ){
+        
+        [self pushLandscapeView];
+        
+    }
+    //if actual orientation is portrait but landscape view is on screen, pop landscape view
+    else  if(  ((self.interfaceOrientation == UIInterfaceOrientationPortrait) || (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) && (index >= 1)  ){
+        
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
+}
+
+-(NSString *)createProgressString{
+    
+    NSString* progressString = [NSString stringWithFormat:@"%d",self.branchOutGame.currentRound];
+    return [progressString stringByAppendingFormat:@"/%d",self.branchOutGame.totalRound];  //@"currentround/totalround"
+    
+}
+
 /* move to next round with animations*/
 -(void)nextRound:(BOOL)nextRound withLeaveAnimation:(NSTimeInterval)leaveDuration andInAnimation:(NSTimeInterval)inDuration
 {
@@ -162,46 +202,6 @@
     
 }
 
--(void)updateUI{
-    
-    if(!self.view.userInteractionEnabled){
-        self.view.userInteractionEnabled = YES;
-    }
-    
-    self.titleLabel.text = @"WHO'S MORE FUN?";
-    self.progressLabel.text = [self createProgressString];  //set progress label
-    self.progressView.progress = (float)self.branchOutGame.currentRound / self.branchOutGame.totalRound; //set progressview's float value
-    
-    for(int i=0; i<[self.branchOutGame.currentCandidates count]; i++){  //update picture and label
-        ((FBProfilePictureView *)self.currentCandidatesImageView[i]).profileID =  ((BOCard *)self.branchOutGame.currentCandidates[i]).id;
-        
-        ((UILabel *)self.currentCandidatesNameLabel[i]).text =  ((BOCard *)self.branchOutGame.currentCandidates[i]).name;
-    }
-    
-    /* orientation support */
-    NSArray *viewControllers = self.navigationController.viewControllers;
-    NSUInteger index = [viewControllers indexOfObject:self];
-    
-    //if actual orientation is landscape but portrait view is on schreen, push landscape view
-    if(  ((self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)) && (index == 0)  ){
-        
-        [self pushLandscapeView];
-    
-    }
-    //if actual orientation is portrait but landscape view is on screen, pop landscape view
-    else  if(  ((self.interfaceOrientation == UIInterfaceOrientationPortrait) || (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) && (index >= 1)  ){
-        
-        [self.navigationController popToRootViewControllerAnimated:NO];
-    }
-}
-
--(NSString *)createProgressString{
-    
-    NSString* progressString = [NSString stringWithFormat:@"%d",self.branchOutGame.currentRound];
-    return [progressString stringByAppendingFormat:@"/%d",self.branchOutGame.totalRound];  //@"currentround/totalround"
-    
-}
-
 #pragma mark - UIGestureRecognizer action
 -(IBAction)candidateSelected:(UITapGestureRecognizer *)sender{
     
@@ -209,7 +209,7 @@
     if(sender.view.tag == 0){
         [self.branchOutGame candidateSelectedAtIndex:0];  
     }
-    else if(sender.view .tag == 1){
+    else if(sender.view.tag == 1){
         [self.branchOutGame candidateSelectedAtIndex:1];
     }
     
@@ -312,9 +312,8 @@
         [navController pushViewController:rankingViewControllerLandscape animated:NO];
     }
     
-    
-    
     [self presentViewController:navController animated:YES completion:nil];
+    
 }
 
 
